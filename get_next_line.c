@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yidrissi <yidrissi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akeryan <akeryan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 17:29:40 by yidrissi          #+#    #+#             */
-/*   Updated: 2022/02/06 22:38:52 by yidrissi         ###   ########.fr       */
+/*   Updated: 2022/02/07 01:47:01 by akeryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,19 @@ char	*get_next_line(int fd)
 
 	i = 0;
 	j = 1;
-	if (fd < 0 || fd > FD_SIZE || BUFF_SIZE < 1)
+	if (fd < 0 || fd > FD_SIZE || BUFFER_SIZE < 1)
 		return (NULL);
-	result = malloc(sizeof(char) * (BUFF_SIZE + 1));
+	result = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!result)
 		return (NULL);
-	while (j > 0 && i < BUFF_SIZE && buff[0] != '\n')
+	while (j > 0 && i < BUFFER_SIZE && buff[0] != '\n')
 	{
 		if (buff[0] != '\n')
 		{
 			j = read(fd, buff, 1);
-			if (!j || buff[0] == '\n')
+			if (j == -1)
+				return (NULL);
+			if (j != 0)
 				result[i++] = buff[0];
 		}
 	}
@@ -40,3 +42,5 @@ char	*get_next_line(int fd)
 	result[i] = '\0';
 	return (result);
 }
+
+
