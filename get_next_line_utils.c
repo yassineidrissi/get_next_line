@@ -6,7 +6,7 @@
 /*   By: yidrissi <yidrissi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 02:53:45 by yidrissi          #+#    #+#             */
-/*   Updated: 2022/02/06 06:20:32 by yidrissi         ###   ########.fr       */
+/*   Updated: 2022/02/07 06:12:39 by yidrissi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	i = 0;
 	while (t_s2 && t_s2[i] != '\0')
 		result[j++] = t_s2[i++];
+	free(t_s1);
+	free(t_s2);
 	return (result);
 }
