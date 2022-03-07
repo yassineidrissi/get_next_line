@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yidrissi <yidrissi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yassine <yassine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 17:37:16 by yidrissi          #+#    #+#             */
-/*   Updated: 2022/02/07 06:13:53 by yidrissi         ###   ########.fr       */
+/*   Updated: 2022/03/07 20:05:43 by yassine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-//# define BUFF_SIZE 1
+# define BUFFER_SIZE 1
 # define FD_SIZE 256
 
 # include <fcntl.h>
